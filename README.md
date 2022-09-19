@@ -4,6 +4,7 @@
 
 ```bash
 ./setup.sh
+pip install opencv-python tqdm
 ```
 
 ## Run
@@ -13,14 +14,19 @@
 ### Change to images
 
 ```bash
-
+python video2image.py
 ```
 
 ### Sparse recon via COLMAP
 
-### Conver camera poses to blender format
+export model as text
 
 ### Neural recon via Instant-NGP
+
+```bash
+cd ~/github/instant-ngp
+./build/testbed --scene <your-scene-data-folder-path>
+```
 
 ## Enjoy it~
 
