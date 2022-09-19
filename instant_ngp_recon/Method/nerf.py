@@ -16,7 +16,17 @@ def colmap2Nerf(
         " --out " + save_transform_json_folder_path + \
         " --aabb_scale " + str(aabb_scale)
     if not runCommand(cmd):
-        print("[ERROR][colmap2nerf::colmap2Nerf]")
+        print("[ERROR][nerf::colmap2Nerf]")
+        print("\t runCommand failed!")
+        return False
+    return True
+
+def runInstantNGP(scene_folder_path):
+    cmd = "cd ~/github/instant-ngp && " + \
+        "./build/testbed" + \
+        " --scene " + scene_folder_path
+    if not runCommand(cmd):
+        print("[ERROR][nerf::runInstantNGP]")
         print("\t runCommand failed!")
         return False
     return True
