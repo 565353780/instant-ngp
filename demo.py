@@ -49,7 +49,7 @@ def demo():
     video_file_path = "/home/chli/chLi/NeRF/" + nerf_folder_and_video_name + \
         "/" + nerf_folder_and_video_name + ".mp4"
     save_image_folder_path = "/home/chli/chLi/NeRF/" + nerf_folder_and_video_name + "/images/"
-    skip_num = 1
+    down_sample_scale = 10
     scale = 1
     show_image = False
     print_progress = True
@@ -66,7 +66,7 @@ def demo():
     videoToImages(
         video_file_path,
         save_image_folder_path,
-        skip_num,
+        down_sample_scale,
         scale,
         show_image,
         print_progress
