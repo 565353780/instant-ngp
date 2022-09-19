@@ -3,11 +3,14 @@
 
 import os
 import cv2
+from tqdm import tqdm
 
 def videoToImages(video_file_path,
                   save_image_folder_path,
+                  skip_num=1,
                   scale=1,
-                  show_image=False):
+                  show_image=False,
+                  print_progress=False):
     if save_image_folder_path[-1] != "/":
         save_image_folder_path += "/"
 
@@ -15,18 +18,22 @@ def videoToImages(video_file_path,
 
     cap = cv2.VideoCapture(video_file_path)
 
-    image_idx = 0
-    skip_num = 20
+    total_image_num = int(cap.get(7))
 
-    while True:
+    for_data = range(total_image_num)
+    if print_progress:
+        print("[INFO][image::videoToImages]")
+        print("\t start convert video to images...")
+        for_data = tqdm(for_data)
+    for image_idx in for_data:
         status, frame = cap.read()
+        if not status:
+            break
+
         image_idx += 1
 
         if image_idx % skip_num != 0:
             continue
-
-        if not status:
-            break
 
         if scale != 1:
             frame = cv2.resize(frame,(
