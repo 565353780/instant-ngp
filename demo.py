@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from instant_ngp_recon.Method.image import videoToImages
+from instant_ngp_recon.Method.colmap import runCOLMAP
 from instant_ngp_recon.Method.nerf import colmap2Nerf, runInstantNGP
 
 def getImages():
@@ -42,22 +43,25 @@ def showNeRF():
     return True
 
 def demo():
+    nerf_folder_and_video_name = "coffee_room"
+
     # videoToImages
-    video_file_path = "/home/chli/chLi/NeRF/chair1/chair1.mp4"
-    save_image_folder_path = "/home/chli/chLi/NeRF/chair1/images/"
-    skip_num = 20
+    video_file_path = "/home/chli/chLi/NeRF/" + nerf_folder_and_video_name + \
+        "/" + nerf_folder_and_video_name + ".mp4"
+    save_image_folder_path = "/home/chli/chLi/NeRF/" + nerf_folder_and_video_name + "/images/"
+    skip_num = 1
     scale = 1
     show_image = False
     print_progress = True
 
     # colmap2Nerf
-    image_folder_path = "/home/chli/chLi/NeRF/chair1/images"
-    colmap_camera_text_folder_path = "/home/chli/chLi/NeRF/chair1/sparse"
-    save_transform_json_folder_path = "/home/chli/chLi/NeRF/chair1/transform.json"
+    image_folder_path = "/home/chli/chLi/NeRF/" + nerf_folder_and_video_name + "/images"
+    colmap_camera_text_folder_path = "/home/chli/chLi/NeRF/" + nerf_folder_and_video_name + "/sparse"
+    save_transform_json_folder_path = "/home/chli/chLi/NeRF/" + nerf_folder_and_video_name + "/transform.json"
     aabb_scale = 16
 
     # runInstantNGP
-    scene_folder_path = "/home/chli/chLi/NeRF/chair1"
+    scene_folder_path = "/home/chli/chLi/NeRF/" + nerf_folder_and_video_name
 
     videoToImages(
         video_file_path,
@@ -68,9 +72,7 @@ def demo():
         print_progress
     )
 
-    finished = input("please run colmap to generate camera pose! then input anything to continue.")
-    if finished == "q":
-        return True
+    runCOLMAP()
 
     colmap2Nerf(
         image_folder_path,
