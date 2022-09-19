@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from instant_ngp_recon.Method.image import videoToImages
-from instant_ngp_recon.Method.colmap2nerf import colmap2Nerf
+from instant_ngp_recon.Method.nerf import colmap2Nerf, runInstantNGP
 
 def getImages():
     video_file_path = "/home/chli/chLi/NeRF/chair1/chair1.mp4"
@@ -36,7 +36,14 @@ def getNeRF():
     )
     return True
 
+def showNeRF():
+    scene_folder_path = "/home/chli/chLi/NeRF/chair1"
+    runInstantNGP(scene_folder_path)
+    return True
+
 if __name__ == "__main__":
-    #  getImages()
+    getImages()
+    finished = input("please run colmap to generate camera pose! then input anything to continue.")
     getNeRF()
+    showNeRF()
 
