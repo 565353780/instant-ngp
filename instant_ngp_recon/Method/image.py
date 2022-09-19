@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 def videoToImages(video_file_path,
                   save_image_folder_path,
-                  skip_num=1,
+                  down_sample_scale=1,
                   scale=1,
                   show_image=False,
                   print_progress=False):
@@ -32,7 +32,7 @@ def videoToImages(video_file_path,
 
         image_idx += 1
 
-        if image_idx % skip_num != 0:
+        if image_idx % down_sample_scale != 0:
             continue
 
         if scale != 1:
