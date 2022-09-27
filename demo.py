@@ -39,7 +39,7 @@ def showNeRF():
 
 
 def demo():
-    nerf_folder_and_video_name = "ustc_niu"
+    nerf_folder_and_video_name = "ustc_niu_green_bg"
 
     # videoToImages
     video_file_path = "/home/chli/chLi/NeRF/" + nerf_folder_and_video_name + \
@@ -59,17 +59,17 @@ def demo():
     # runInstantNGP
     scene_folder_path = "/home/chli/chLi/NeRF/" + nerf_folder_and_video_name
 
-    #  try:
-        #  shutil.rmtree(save_image_folder_path)
-    #  except:
-        #  pass
-    #  videoToImages(video_file_path, save_image_folder_path, down_sample_scale,
-                  #  scale, show_image, print_progress)
+    try:
+        shutil.rmtree(save_image_folder_path)
+    except:
+        pass
+    videoToImages(video_file_path, save_image_folder_path, down_sample_scale,
+                  scale, show_image, print_progress)
 
-    #  runCOLMAP()
+    runCOLMAP()
 
-    #  colmap2Nerf(image_folder_path, colmap_camera_text_folder_path,
-                #  save_transform_json_folder_path, aabb_scale)
+    colmap2Nerf(image_folder_path, colmap_camera_text_folder_path,
+                save_transform_json_folder_path, aabb_scale)
 
     runInstantNGP(scene_folder_path)
     return True
