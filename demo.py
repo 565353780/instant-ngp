@@ -39,13 +39,18 @@ def showNeRF():
 
 
 def demo():
-    nerf_folder_and_video_name = "ustc_niu_green_bg"
+    cut_image = False
+    run_colmap = False
+    run_instant_ngp = True
+
+    nerf_folder_and_video_name = "3vjia_person_4"
+    video_file_name = "1.mp4"
 
     # videoToImages
     video_file_path = "/home/chli/chLi/NeRF/" + nerf_folder_and_video_name + \
-        "/" + nerf_folder_and_video_name + ".mp4"
+        "/" + video_file_name
     save_image_folder_path = "/home/chli/chLi/NeRF/" + nerf_folder_and_video_name + "/images/"
-    down_sample_scale = 10
+    down_sample_scale = 4
     scale = 1
     show_image = False
     print_progress = True
@@ -59,19 +64,22 @@ def demo():
     # runInstantNGP
     scene_folder_path = "/home/chli/chLi/NeRF/" + nerf_folder_and_video_name
 
-    try:
-        shutil.rmtree(save_image_folder_path)
-    except:
-        pass
-    videoToImages(video_file_path, save_image_folder_path, down_sample_scale,
-                  scale, show_image, print_progress)
+    if cut_image:
+        try:
+            shutil.rmtree(save_image_folder_path)
+        except:
+            pass
+        videoToImages(video_file_path, save_image_folder_path,
+                      down_sample_scale, scale, show_image, print_progress)
 
-    runCOLMAP()
+    if run_colmap:
+        runCOLMAP()
 
-    colmap2Nerf(image_folder_path, colmap_camera_text_folder_path,
-                save_transform_json_folder_path, aabb_scale)
+        colmap2Nerf(image_folder_path, colmap_camera_text_folder_path,
+                    save_transform_json_folder_path, aabb_scale)
 
-    runInstantNGP(scene_folder_path)
+    if run_instant_ngp:
+        runInstantNGP(scene_folder_path)
     return True
 
 
