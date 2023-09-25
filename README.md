@@ -1,5 +1,21 @@
 # Instant NGP Recon
 
+## Install OptiX
+
+follow the link to install OptiX
+
+```bash
+https://developer.nvidia.com/optix
+```
+
+and add
+
+```bash
+export OptiX_INSTALL_DIR=$HOME/NVIDIA-OptiX-SDK-<your-optix-version>/
+```
+
+to $HOME/.zshrc
+
 ## Install
 
 ```bash
