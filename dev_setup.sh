@@ -1,5 +1,5 @@
 cd ..
-git clone https://github.com/565353780/colmap-manage.git
+git clone git@github.com:565353780/colmap-manage.git
 git clone https://ceres-solver.googlesource.com/ceres-solver
 git clone --recursive https://github.com/nvlabs/instant-ngp
 
@@ -20,7 +20,7 @@ sudo apt-get install libatlas-base-dev libsuitesparse-dev
 pip install opencv-python tqdm
 
 cd colmap-manage
-./setup.sh
+./dev_setup.sh
 
 cd ceres-solver
 git checkout $(git describe --tags)

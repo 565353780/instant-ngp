@@ -3,8 +3,9 @@
 ## Install
 
 ```bash
+conda create -n ingp python=3.11
+conda activate ingp
 ./setup.sh
-pip install opencv-python tqdm
 ```
 
 ## Run
@@ -14,4 +15,3 @@ python demo.py
 ```
 
 ## Enjoy it~
-
