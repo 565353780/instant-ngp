@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from instant_ngp_recon.Method.cmd import runCommand
+from instant_ngp.Method.cmd import runCommand
 
 def runCOLMAP():
     cmd = "colmap gui"

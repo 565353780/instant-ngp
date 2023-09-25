@@ -3,9 +3,9 @@
 
 import shutil
 
-from instant_ngp_recon.Method.image import videoToImages
-from instant_ngp_recon.Method.colmap import runCOLMAP
-from instant_ngp_recon.Method.nerf import colmap2Nerf, runInstantNGP
+from instant_ngp.Method.image import videoToImages
+from instant_ngp.Method.colmap import runCOLMAP
+from instant_ngp.Method.nerf import colmap2Nerf, runInstantNGP
 
 
 def getImages():
