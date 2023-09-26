@@ -23,7 +23,7 @@ def colmap2Nerf(
 
 def runInstantNGP(scene_folder_path):
     cmd = "cd ~/github/instant-ngp && " + \
-        "./build/testbed" + \
+        "./build/instant-ngp" + \
         " --scene " + scene_folder_path
     if not runCommand(cmd):
         print("[ERROR][nerf::runInstantNGP]")
