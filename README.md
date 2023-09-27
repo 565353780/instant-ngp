@@ -1,20 +1,26 @@
-# Instant NGP Recon
+# Instant NGP
 
-## Install OptiX
-
-follow the link to install OptiX
+## Source
 
 ```bash
-https://developer.nvidia.com/optix
+https://github.com/NVlabs/instant-ngp
 ```
 
-and add
+## Requirements
 
 ```bash
-export OptiX_INSTALL_DIR=$HOME/NVIDIA-OptiX-SDK-<your-optix-version>/
+gcc-12 & g++-12
+cuda-12.2
+optix-8.0.0
 ```
 
-to $HOME/.zshrc
+and set
+
+```bash
+~/.zshrc
+->
+export OptiX_INSTALL_DIR=$HOME/NVIDIA-OptiX-SDK-8.0.0-linux64-x86_64/
+```
 
 ## Install
 
