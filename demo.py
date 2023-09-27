@@ -1,4 +1,4 @@
-from instant_ngp.Demo.run import demo as demo_run
+from instant_ngp.Demo.train import demo as demo_train
 
 if __name__ == "__main__":
-    demo_run()
+    demo_train()

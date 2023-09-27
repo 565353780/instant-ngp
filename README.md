@@ -27,6 +27,7 @@ conda activate ingp
 ## Run
 
 ```bash
+python convert.py
 python demo.py
 ```
 
