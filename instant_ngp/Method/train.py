@@ -5,7 +5,7 @@ def trainINGP(dataset_folder_path):
         ' --scene ' + dataset_folder_path
 
     if not runCMD(cmd, True):
-        print('[ERROR][nerf::trainINGP]')
+        print('[ERROR][train::trainINGP]')
         print('\t runCMD failed!')
         print('\t cmd:', cmd)
         return False
