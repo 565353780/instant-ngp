@@ -4,8 +4,7 @@
 from instant_ngp.Method.cmd import runCMD
 
 def runInstantNGP(scene_folder_path):
-    cmd = "cd ../ingp && " + \
-        "./build/instant-ngp" + \
+    cmd = "../ingp/build/instant-ngp" + \
         " --scene " + scene_folder_path
     if not runCMD(cmd, True):
         print("[ERROR][nerf::runInstantNGP]")
