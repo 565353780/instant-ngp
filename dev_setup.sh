@@ -9,5 +9,7 @@ cd colmap-manage
 ./dev_setup.sh
 
 cd ../ingp
+rm -rf build
+
 cmake . -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
 cmake --build build --config RelWithDebInfo -j
