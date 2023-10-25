@@ -7,7 +7,7 @@ from colmap_manage.Module.colmap_manager import COLMAPManager
 from colmap_manage.Module.dataset_manager import DatasetManager
 from instant_ngp.Method.train import trainINGP
 
-data_folder_name = 'NeRF/usb'
+data_folder_name = 'NeRF/3vjia_simple'
 video_file_path = 'None'
 down_sample_scale = 1
 
@@ -21,7 +21,7 @@ method_dict = {
     'aabb_scale': 2,
 }
 
-data_folder_path = '/home/chli/Dataset/' + data_folder_name + '/'
+data_folder_path = '/home/chli/chLi/Dataset/' + data_folder_name + '/'
 dataset_folder_path = '../colmap-manage/output/' + \
     data_folder_name.replace('/', '_') + '/'
 output_folder_path = '../instant-ngp/output/' + \
